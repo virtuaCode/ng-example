@@ -5,7 +5,11 @@ import { FRUITS } from "./mock-fruits"
 
 @Injectable()
 export class FruitService {
-    getFruits(): Promise <Fruit[]> { 
+    getFruits(): Promise<Fruit[]> {
         return Promise.resolve(FRUITS)
+    }
+    getFruit(id: number): Promise<Fruit> {
+        return this.getFruits()
+            .then(fruits => fruits.find(fruit => fruit.id === id));
     }
 }

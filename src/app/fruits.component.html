@@ -1,9 +1,0 @@
-<h1>{{title}}</h1>
-<ul class="fruits">
-  <li *ngFor="let fruit of fruits" (click)="onSelect(fruit)" [class.selected]="fruit === selectedFruit">
-    <!-- each fruit goes here -->
-    <span class="badge">{{fruit.id}}</span> {{fruit.name}}
-  </li>
-</ul>
-
-<fruit-detail [fruit]="selectedFruit"></fruit-detail>

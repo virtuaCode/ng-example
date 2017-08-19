@@ -1,0 +1,13 @@
+<ul class="fruits">
+  <li class="list-item" *ngFor="let fruit of fruits" (click)="onSelect(fruit)" [class.selected]="fruit === selectedFruit">
+    <!-- each fruit goes here -->
+    <div class="badge">{{fruit.id}}</div><div class="item">{{fruit.name}}</div>
+  </li>
+</ul>
+<div *ngIf="selectedFruit">
+    <h2>
+      {{selectedFruit.name | uppercase}}
+    </h2>
+    <button (click)="gotoDetail()">View Details</button>
+</div>
+
